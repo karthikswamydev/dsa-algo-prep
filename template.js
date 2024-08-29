@@ -55,8 +55,9 @@ const binarySearch = (arr, target) => {
 // console.log(binarySearch(arr, 7));
 
 const bubbleSort = (buarr) => {
-  let swapped = true;
+  let swapped;
   do {
+    swapped = false;
     for (let i = 0; i < buarr.length - 1; i++) {
       if (buarr[i] < buarr[i + 1]) {
         let temp = buarr[i];
@@ -69,11 +70,12 @@ const bubbleSort = (buarr) => {
   return buarr;
 };
 
-const buarr = [8, 20, -4, 4, 3];
+// const buarr = [8, 20, -4, 4, 3];
 // console.log(bubbleSort(buarr));
+const arr = [8, 20, -4, 4, 3];
 
 const quickSort = (arr) => {
-  if (arr.length < 2) {
+  if (arr < 2) {
     return arr;
   }
   let pivot = arr[arr.length - 1];
@@ -81,9 +83,9 @@ const quickSort = (arr) => {
   let left = [];
   for (i = 0; i < arr.length - 1; i++) {
     if (arr[i] < pivot) {
-      left.push(arr[i]);
-    } else {
       right.push(arr[i]);
+    } else {
+      left.push(arr[i]);
     }
   }
   return [...quickSort(left), pivot, ...quickSort(right)];
