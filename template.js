@@ -116,10 +116,24 @@ const twoSum = (nums, target) => {
 
 const palindrom = (n) => {
   const num = n.toString();
-  console.log(typeof num);
+  // console.log(typeof num);
   const d = num.split("").reverse().join("");
-  console.log(d);
+  // console.log(d);
   return num === d;
 };
 
-console.log([palindrom(121)]);
+// console.log([palindrom(121)]);
+
+const convertRoman = (s) => {
+  const mapRoman = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let result = 0;
+  for (let i = 0; i < s.length; i++) {
+    let curr = mapRoman[s[i]];
+    let next = mapRoman[s[i + 1]];
+
+    next && curr < next ? (result -= curr) : (result += curr);
+  }
+
+  return result;
+};
+console.log(convertRoman("MCMXCIV"));
