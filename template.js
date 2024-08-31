@@ -1,5 +1,5 @@
 const card = [12, 11, 10, 9, 8, 7, 6];
-const target = 8;
+// const target = 8;
 
 const linearSearch = (card, target) => {
   let result = -1;
@@ -91,4 +91,35 @@ const quickSort = (arr) => {
   return [...quickSort(left), pivot, ...quickSort(right)];
 };
 
-console.log(quickSort(arr));
+// console.log(quickSort(arr));
+
+const nums = [2, 7, 11, 15];
+const target = 9;
+
+const twoSum = (nums, target) => {
+  const newnum = new Map();
+  console.log(newnum, "newnum");
+
+  for (i = 0; i < arr.length; i++) {
+    const complement = target - nums[i];
+    console.log(complement, "comple");
+
+    if (newnum.has(complement)) {
+      return [newnum.get(complement), i];
+    }
+    newnum.set(nums[i], i);
+  }
+  [];
+};
+
+// console.log(twoSum(nums, target));
+
+const palindrom = (n) => {
+  const num = n.toString();
+  console.log(typeof num);
+  const d = num.split("").reverse().join("");
+  console.log(d);
+  return num === d;
+};
+
+console.log([palindrom(121)]);
